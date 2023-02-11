@@ -3,23 +3,22 @@ import {
   Box,
   Flex,
   Button,
-  useDisclosure,
+  Image,
   useColorModeValue,
   Stack,
   useColorMode,
-  Input,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const Navbar: FC = memo(() => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const [searchValue, setSearchValue] = useState("");
+  const bg = useColorModeValue("#FFCC00", "#0075BE");
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} m={10}>
+      <Box bg={bg} p={10}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Input type={"text"}></Input>
+          <Image src={"/International_Pokemon_logo.svg"}></Image>
 
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7}>
