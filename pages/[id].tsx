@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 import { DetailTable, LoadingModal } from "../components";
@@ -7,6 +7,7 @@ import { getPokemon } from "../utils";
 export default function DetailPage() {
   const router = useRouter();
   const { id, data } = router.query;
+  const bg = useColorModeValue("#FFCC00", "#0075BE");
   let pokemon;
   if (data) {
     pokemon = JSON.parse(data) as Pokemon;
@@ -26,7 +27,7 @@ export default function DetailPage() {
 
   if (detailPokemon && pokemon)
     return (
-      <Box backgroundColor={"#FFCC00"}>
+      <Box backgroundColor={bg}>
         <DetailTable
           detailPokemon={detailPokemon}
           pokemon={pokemon}

@@ -10,6 +10,7 @@ import {
   Text,
   CardFooter,
   Button,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 type PokemonCardProps = {
@@ -19,6 +20,8 @@ type PokemonCardProps = {
 
 const PokemonCard: FC<PokemonCardProps> = memo(({ className, pokemon }) => {
   const router = useRouter();
+  const bg = useColorModeValue("#FFCC00", "#0075BE");
+  const reverseBg = useColorModeValue("#0075BE", "#FFCC00");
 
   const handleClick = (e: MouseEvent) => {
     e.preventDefault();
@@ -31,7 +34,6 @@ const PokemonCard: FC<PokemonCardProps> = memo(({ className, pokemon }) => {
 
   return (
     <Card
-      backgroundColor={"#FFCC00"}
       direction={{ base: "column", sm: "row" }}
       overflow="hidden"
       variant="outline"
@@ -49,11 +51,7 @@ const PokemonCard: FC<PokemonCardProps> = memo(({ className, pokemon }) => {
         </CardBody>
 
         <CardFooter>
-          <Button
-            variant="solid"
-            backgroundColor={"#0075BE"}
-            onClick={handleClick}
-          >
+          <Button variant="solid" backgroundColor={bg} onClick={handleClick}>
             See detail
           </Button>
         </CardFooter>

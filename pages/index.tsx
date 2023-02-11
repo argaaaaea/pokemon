@@ -1,9 +1,15 @@
-import { SimpleGrid, Heading, Stack } from "@chakra-ui/react";
+import {
+  SimpleGrid,
+  Heading,
+  Stack,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { useQuery } from "react-query";
 import { LoadingModal, PokemonCard } from "../components";
 import { getListPokemon } from "../utils";
 
 export default function Home() {
+  const bg = useColorModeValue("#FFCC00", "#0075BE");
   const {
     isLoading,
     isError,
@@ -15,7 +21,7 @@ export default function Home() {
   if (isError) return <div>"There is an error"</div>;
 
   return (
-    <Stack spacing={6}>
+    <Stack spacing={6} backgroundColor={bg}>
       <Heading textAlign={"center"} fontSize={"6xl"} pt={4}>
         List Of Pokemon
       </Heading>
