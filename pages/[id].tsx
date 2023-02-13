@@ -9,7 +9,7 @@ export default function DetailPage() {
   const { id, data } = router.query;
   const bg = useColorModeValue("#FFCC00", "#0075BE");
   let pokemon;
-  if (data) {
+  if (typeof data === "string") {
     pokemon = JSON.parse(data) as Pokemon;
     console.log(pokemon);
   }
