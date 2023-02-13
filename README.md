@@ -40,3 +40,5 @@ then
 ```bash
 npm run start
 ```
+
+or visit the website online from https://pokemon-kappa-roan.vercel.app/
