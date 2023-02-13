@@ -38,5 +38,5 @@ npm run build
 then
 
 ```bash
-npm run prod
+npm run start
 ```
